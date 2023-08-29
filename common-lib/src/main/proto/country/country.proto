@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.msrazavi.test.grpc.common.model";
+
+
+package country;
+
+service CountryService {
+  // UnaryEcho is unary echo.
+  rpc save(Country) returns (Country) {}
+}
+
+message Country {
+  string name = 1;
+  int32 size = 2;
+}

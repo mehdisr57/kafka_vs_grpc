@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.msrazavi.test</groupId>
+    <artifactId>grpc</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>grpc</name>
+    <description>grpc</description>
+
+    <properties>
+        <java.version>20</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <grpc.version>1.57.2</grpc.version><!-- CURRENT_GRPC_VERSION -->
+        <protobuf.version>3.24.2</protobuf.version>
+        <protoc.version>3.24.2</protoc.version>
+    </properties>
+
+    <modules>
+        <module>grpc-server</module>
+        <module>grpc-client</module>
+        <module>common-lib</module>
+        <module>kafka-server</module>
+        <module>kafka-client</module>
+    </modules>
+
+</project>
