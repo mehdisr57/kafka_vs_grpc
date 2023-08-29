@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.msrazavi.test.grpc.common.model.Country;
 import com.msrazavi.test.grpc.common.model.CountryServiceGrpc;
 import io.grpc.Channel;
+import io.grpc.Context;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ExecutionException;
@@ -24,9 +25,11 @@ public class CountryClient {
                 .setName(name)
                 .build());
         try {
-            return future.get(1, TimeUnit.MINUTES);
+            return future.get(20, TimeUnit.SECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
+        return Country.getDefaultInstance();
     }
 }
